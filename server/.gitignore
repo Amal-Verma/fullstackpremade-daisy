@@ -1,0 +1,8 @@
+new.py
+env/
+*.pyc
+__pycache__/
+*.log
+*.env
+*.venv
+*myenv
