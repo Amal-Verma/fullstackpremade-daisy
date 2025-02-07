@@ -11,8 +11,8 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-@router.post("/login", response_model=UserResMod)
-async def login(req: UserReqMod):
+@router.post("/login", response_model=userResMod)
+async def login(req: userReqMod):
     response = supabase.table("peoples").select("id, password").eq("email", req.email).single().execute()
     if response.data:
         user = response.data
@@ -21,8 +21,8 @@ async def login(req: UserReqMod):
             return {"error": False, "token": token}
     raise HTTPException(status_code=401, detail="Invalid credentials")
 
-@router.post("/register", response_model=UserResMod)
-async def register(req: UserReqMod):
+@router.post("/register", response_model=userResMod)
+async def register(req: userReqMod):
     response = supabase.table("peoples").select("id").eq("email", req.email).execute()
     if response.data:
         raise HTTPException(status_code=400, detail="User already exists")
