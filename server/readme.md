@@ -70,16 +70,9 @@ uvicorn main:app --reload
 
 > `--reload` enables auto-restart on code changes.
 
+###
+
 ---
-
-## 🔧 Dependency Fix
-
-If you encounter an error like:
-  "passlib.exc.MissingBackendError: bcrypt: no backends available"
-please install bcrypt in your virtual environment:
-```sh
-pip install bcrypt
-```
 
 ## 🔥 API Documentation
 
@@ -90,24 +83,9 @@ Once the server is running, visit:
 
 ---
 
-## 🧪 Testing
-
-After starting the server, test the backend using one of these methods:
-
-- Open the interactive API docs at:
-  - http://127.0.0.1:8000/docs
-  - http://127.0.0.1:8000/redoc
-
-- Or use curl/Postman. Example with curl:
-  ```sh
-  curl -X POST "http://127.0.0.1:8000/register" \
-       -H "Content-Type: application/json" \
-       -d '{"email": "test@example.com", "password": "test123"}'
-  ```
-
 ## 🛠️ Additional Commands
 
-### **Freeze Dependencies (Update `requirements.txt`)**
+### **Freeze Dependencies (Update ************************************************************************`requirements.txt`************************************************************************)**
 
 ```sh
 pip freeze > requirements.txt
