@@ -2,6 +2,9 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes.authRoute import router as auth_router
+from routes.repoRoute import router as repo_router
+from routes.roomRoute import router as room_router
+from routes.accessRoute import router as access_router
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,6 +22,9 @@ app.add_middleware(
 
 # Registering multiple routers
 app.include_router(auth_router, prefix="/auth")  # Auth routes
+app.include_router(repo_router, prefix="/repo")  # Repo routes
+app.include_router(room_router, prefix="/room")  # Room routes
+app.include_router(access_router, prefix="/access")  # Access routes
 
 if __name__ == "__main__":
     import uvicorn

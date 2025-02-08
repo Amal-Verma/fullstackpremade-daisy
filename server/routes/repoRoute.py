@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from supabase import create_client, Client
 import os
 import uuid
-from models import RepoRequestModel, RepoResponseModel
+from models import RepoRequestModel, RepoResponseModel, FileRequestModel, FileResponseModel
 
 router = APIRouter()
 
